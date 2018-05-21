@@ -1,0 +1,11 @@
+<launch>
+
+    <!-- Launching of simulator -->
+    <include file="$(find kobuki_gazebo)/launch/kobuki_empty_world.launch"/>
+
+    <!-- Launching of keyboard control node -->
+    <node pkg = "hand_track" type = "hand2.py" name = "hand_control_node">
+		<remap from ="cmd_vel" to ="/mobile_base/commands/velocity"/>
+	</node>
+
+</launch>
